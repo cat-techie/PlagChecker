@@ -17,6 +17,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+tasks/
 build/
 develop-eggs/
 dist/
@@ -33,6 +34,8 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.idea/vcs.xml
+
 MANIFEST
 
 # PyInstaller
