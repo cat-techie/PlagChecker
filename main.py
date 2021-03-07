@@ -4,6 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import keyword
 import tokenize
+import TokenDictionary
 
 
 def print_hi(name):
@@ -13,17 +14,16 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    tokens = []
+    file1 = 'tasks/checkers.py'
+    file2 = 'tasks/King.py'
+    file3 = 'tasks/K_checkers.py'
 
+    with open(file1, 'rb') as f1:
+        #print(f"{tokenize.tok_name[1]}")
+        var = TokenDictionary.FormatTokenStr(tokenize.tokenize(f1.readline))
+        print(" ".join(map(str, var)))
+        #for t in tokenize.tokenize(f1.readline):
+            #print(t)
 
-    with open('tests.py', 'rb') as f:
-        for token in tokenize.tokenize(f.readline):
-            #print(token)
-            if token.string in tokenDict or keyword.iskeyword(token.string):
-                tokens.append(token.type)
-                print(token)
-
-        tokens = zip(*[iter(tokens)] * 2)
-        print(" ".join(map(str, tokens)))
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        #tokens = zip(*[iter(tokens)] * 2)
+        #print(" ".join(map(str, tokens)))
